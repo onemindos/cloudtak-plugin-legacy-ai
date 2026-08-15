@@ -1,0 +1,16 @@
+{
+    "name": "@onemindos/cloudtak-plugin",
+    "version": "1.0.0",
+    "description": "OneMind OS plugin for CloudTAK — Legacy AI streaming chat, NATS map tools",
+    "type": "module",
+    "main": "index.ts",
+    "peerDependencies": {
+        "@tak-ps/cloudtak": "*",
+        "vue": "^3.0.0"
+    },
+    "devDependencies": {
+        "@tak-ps/cloudtak": "^13.66.1",
+        "typescript": "^5.0.0",
+        "vue": "^3.5.0"
+    }
+}
