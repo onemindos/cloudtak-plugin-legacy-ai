@@ -18,4 +18,4 @@ jobs:
           repository: onemindos/omos-infra
           event-type: plugin-updated
           client-payload: |
-            {"plugin": "omos-ai-plugin", "sha": "${{ github.sha }}"}
+            {"plugin": "cloudtak-plugin-legacy-ai", "sha": "${{ github.sha }}"}
