@@ -72,7 +72,7 @@
                     viewBox='0 0 24 24'
                     fill='currentColor'
                 >
-                    <path d='M2 21l21-9L2 3v7l15 2-15 2v7z'/>
+                    <path d='M2 21l21-9L2 3v7l15 2-15 2v7z' />
                 </svg>
             </button>
         </div>
