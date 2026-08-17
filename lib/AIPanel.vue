@@ -6,26 +6,44 @@
                 <span class='legacy-hex'>⬡</span>
                 <span>Legacy AI</span>
             </div>
-            <div class='legacy-status' :class='wsState'>
+            <div
+                class='legacy-status'
+                :class='wsState'
+            >
                 <span class='legacy-dot' />
                 {{ wsState === 'open' ? 'Live' : wsState === 'connecting' ? 'Connecting…' : 'Offline' }}
             </div>
         </div>
 
         <!-- Messages -->
-        <div ref='messagesEl' class='legacy-messages'>
+        <div
+            ref='messagesEl'
+            class='legacy-messages'
+        >
             <div
                 v-for='(msg, i) in messages'
                 :key='i'
                 class='legacy-msg'
                 :class='msg.role'
             >
-                <div class='legacy-bubble' v-html='renderMd(msg.text)' />
+                <div
+                    class='legacy-bubble'
+                    v-html='renderMd(msg.text)'
+                />
             </div>
-            <div v-if='streaming' class='legacy-msg assistant'>
-                <div class='legacy-bubble streaming' v-html='renderMd(streamBuf) + "<span class=cursor>▋</span>"' />
+            <div
+                v-if='streaming'
+                class='legacy-msg assistant'
+            >
+                <div
+                    class='legacy-bubble streaming'
+                    v-html='renderMd(streamBuf) + "<span class=cursor>▋</span>"'
+                />
             </div>
-            <div v-if='!messages.length && !streaming' class='legacy-empty'>
+            <div
+                v-if='!messages.length && !streaming'
+                class='legacy-empty'
+            >
                 <span class='legacy-hex-big'>⬡</span>
                 <p>OneMind's sovereign AI.<br>Ask anything about the op.</p>
             </div>
@@ -48,7 +66,12 @@
                 :disabled='!draft.trim() || wsState !== "open" || streaming'
                 @click='send'
             >
-                <svg width='18' height='18' viewBox='0 0 24 24' fill='currentColor'>
+                <svg
+                    width='18'
+                    height='18'
+                    viewBox='0 0 24 24'
+                    fill='currentColor'
+                >
                     <path d='M2 21l21-9L2 3v7l15 2-15 2v7z'/>
                 </svg>
             </button>
