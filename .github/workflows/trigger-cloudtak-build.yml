@@ -1,0 +1,21 @@
+name: Trigger CloudTAK rebuild
+
+# When this plugin is updated, kick off a fresh cloudtak-api image build
+# in omos-infra so the cluster picks up the new plugin code automatically.
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch rebuild to omos-infra
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.OMOS_INFRA_DISPATCH_TOKEN }}
+          repository: onemindos/omos-infra
+          event-type: plugin-updated
+          client-payload: |
+            {"plugin": "omos-ai-plugin", "sha": "${{ github.sha }}"}
